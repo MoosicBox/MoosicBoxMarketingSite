@@ -6,7 +6,7 @@ import { AstroSite, type StackContext } from 'sst/constructs';
 export default {
     config(_input) {
         return {
-            name: 'moosicbox',
+            name: 'moosicbox-marketing',
             region: 'us-east-1',
         };
     },
@@ -20,7 +20,8 @@ export default {
                 'DOMAIN',
                 stack.stage,
             );
-            const subdomain = isProd ? '' : `${stack.stage}.`;
+
+            const subdomain = isProd ? '' : `marketing-${stack.stage}.`;
             const domainName = `${subdomain}${DOMAIN}`;
 
             const site = new AstroSite(stack, 'MoosicBox', {
