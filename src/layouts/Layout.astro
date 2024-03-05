@@ -1,4 +1,6 @@
 ---
+import HeaderNav from '~/layouts/HeaderNav.astro';
+
 interface Props {
     title: string;
 }
@@ -23,18 +25,10 @@ const { title } = Astro.props;
     </head>
     <body>
         <div id="root" class="dark">
-            <section class="navigation-bar-and-main-content">
-                <main class="main-content">
-                    <slot />
-                </main>
-            </section>
-            <footer
-                data-turbo-permanent
-                id="footer"
-                class="footer-player-footer"
-            >
-                <div class="footer-player-container"></div>
-            </footer>
+            <HeaderNav />
+            <main class="main-content">
+                <slot />
+            </main>
         </div>
     </body>
 </html>
@@ -58,11 +52,15 @@ const { title } = Astro.props;
     html,
     body,
     #root,
-    .navigation-bar-and-main-content,
     .main-content {
         margin: 0;
         padding: 0;
         width: 100%;
         height: 100%;
+    }
+
+    .main-content {
+        padding-top: 51.46px;
+        box-sizing: border-box;
     }
 </style>
