@@ -18,8 +18,12 @@
             </li>
             <li>
                 <a
-                    class="header-nav-items-link header-nav-items-link-try-now"
+                    class="header-nav-items-link header-nav-items-link-try-now header-nav-items-link-try-now-desktop"
                     href="/try-now">Start Free Trial</a
+                >
+                <a
+                    class="header-nav-items-link header-nav-items-link-try-now header-nav-items-link-try-now-mobile"
+                    href="/try-now">Try</a
                 >
             </li>
         </ul>
@@ -77,5 +81,31 @@
         padding: 8px;
         border-radius: 5px;
         color: white;
+    }
+
+    .header-nav-items-link-try-now-mobile {
+        display: none;
+    }
+
+    @media (max-width: 600px) {
+        .header-nav-header {
+            padding: 0 10px;
+        }
+
+        .header-nav-items {
+            padding: 0 10px;
+        }
+
+        .header-nav-items li:not(:first-of-type) {
+            margin-left: 10px;
+        }
+
+        .header-nav-items-link-try-now-desktop {
+            display: none;
+        }
+
+        .header-nav-items-link-try-now-mobile {
+            display: initial;
+        }
     }
 </style>
