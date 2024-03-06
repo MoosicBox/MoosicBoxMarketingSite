@@ -68,7 +68,7 @@ export default function modalFunc() {
                                                             .browser_download_url
                                                     }
                                                 >
-                                                    {releaseAsset.assetName}
+                                                    {asset().name}
                                                 </a>{' '}
                                                 <span class="download-artifacts-list-release-asset-size">
                                                     ({getSize(asset().size)}){' '}

@@ -50,7 +50,6 @@ export interface OsRelease {
 
 export interface OsAsset {
     name: string;
-    assetName: string;
     assetMatcher: (assetName: string) => boolean;
     asset?: Asset | undefined;
     showMoreFormats: boolean;
@@ -79,15 +78,18 @@ function createAsset(
 ): OsAsset {
     const { assets } = release;
 
+    const otherFormats = assets.filter(
+        (a) => a.name !== assetName && assetMatcher(a.name),
+    );
+    const asset =
+        assets.find((a) => a.name === assetName) ?? otherFormats.shift();
+
     return {
         name,
-        assetName,
         assetMatcher,
-        asset: assets.find((a) => a.name === assetName),
+        asset,
         showMoreFormats: true,
-        otherFormats: assets.filter(
-            (a) => a.name !== assetName && assetMatcher(a.name),
-        ),
+        otherFormats,
     };
 }
 
