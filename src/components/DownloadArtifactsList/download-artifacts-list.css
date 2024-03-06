@@ -13,6 +13,10 @@
 
 .download-artifacts-list-release-header-date {
     color: #ccc;
+}
+
+.download-artifacts-list-release-header-date,
+.download-artifacts-list-release-header-github {
     font-size: 16px;
     align-self: flex-end;
     position: relative;
@@ -38,7 +42,8 @@
         flex-direction: column;
     }
 
-    .download-artifacts-list-release-header-date {
+    .download-artifacts-list-release-header-date,
+    .download-artifacts-list-release-header-github {
         align-self: auto;
         bottom: unset;
         margin-left: 0;

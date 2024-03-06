@@ -37,6 +37,13 @@ export default function modalFunc() {
                                         'LLLL dd, yyyy',
                                     )}
                                 </div>
+                                <div class="download-artifacts-list-release-header-github">
+                                    [
+                                    <a target="_blank" href={release.url}>
+                                        GitHub
+                                    </a>
+                                    ]
+                                </div>
                             </h2>
                             <For each={release.assets}>
                                 {(releaseAsset) => (
