@@ -1,4 +1,4 @@
-import { QueryParams, objToStr } from './util';
+import { QueryParams, lowerOs, objToStr } from './util';
 
 class RequestError extends Error {
     constructor(public response: Response) {
@@ -45,14 +45,14 @@ export interface OsRelease {
     assets: OsAsset[];
     version: string;
     url: string;
-    releaseNotesUrl?: string;
+    createdAt: string;
 }
 
 export interface OsAsset {
     name: string;
     assetName: string;
     assetMatcher: (assetName: string) => boolean;
-    asset?: Asset;
+    asset?: Asset | undefined;
     showMoreFormats: boolean;
     otherFormats: Asset[];
 }
@@ -61,11 +61,86 @@ export async function getGitHubReleases(opts: {
     org: string;
     repo: string;
 }): Promise<GitHubRelease[]> {
-    let releaseTag: string | undefined;
     const apiRoot = `https://api.github.com/repos/${opts.org}/${opts.repo}`;
-    const releaseUrl = `${apiRoot}/releases/${releaseTag ? 'tags/' + releaseTag : 'latest'}`;
+    const releaseUrl = `${apiRoot}/releases`;
 
-    return requestJson(releaseUrl);
+    const releases = await requestJson<GitHubRelease[]>(releaseUrl);
+
+    releases.sort((a, b) => b.created_at.localeCompare(a.created_at));
+
+    return releases;
+}
+
+function createAsset(
+    release: GitHubRelease,
+    name: string,
+    assetName: string,
+    assetMatcher: (assetName: string) => boolean,
+): OsAsset {
+    const { assets } = release;
+
+    return {
+        name,
+        assetName,
+        assetMatcher,
+        asset: assets.find((a) => a.name === assetName),
+        showMoreFormats: true,
+        otherFormats: assets.filter(
+            (a) => a.name !== assetName && assetMatcher(a.name),
+        ),
+    };
+}
+
+export function createOsRelease(release: GitHubRelease): OsRelease {
+    const { name, html_url } = release;
+
+    function matches(value: RegExp): (name: string) => boolean {
+        return (name) => name.match(value) !== null;
+    }
+
+    const value: OsRelease = {
+        assets: [
+            createAsset(
+                release,
+                'windows',
+                'MoosicBox_x64.msi',
+                matches(/(.+?\.msi|.+?\.exe)/gi),
+            ),
+            createAsset(
+                release,
+                'mac',
+                'MoosicBox_x64.dmg',
+                matches(/(.+?\.dmg|.+?_macos.*)/gi),
+            ),
+            createAsset(
+                release,
+                'linux',
+                'moosicbox_amd64.deb',
+                matches(/(.+?\.AppImage|.+?\.deb|.+?_linux.*)/gi),
+            ),
+            createAsset(
+                release,
+                'android',
+                'MoosicBox.apk',
+                matches(/(.+?\.aab|.+?\.apk)/gi),
+            ),
+        ],
+        version: name,
+        url: html_url,
+        createdAt: release.created_at,
+    };
+
+    value.assets.sort((a, b) => {
+        if (lowerOs === a.name) {
+            return -1;
+        } else if (lowerOs === b.name) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    return value;
 }
 
 async function requestJson<T>(

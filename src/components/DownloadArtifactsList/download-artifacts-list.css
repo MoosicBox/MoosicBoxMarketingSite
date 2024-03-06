@@ -1,0 +1,46 @@
+.download-artifacts-list-release {
+    padding: 20px 0;
+}
+
+.download-artifacts-list-other-assets {
+    margin: 0;
+}
+
+.download-artifacts-list-release-header {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.download-artifacts-list-release-header-date {
+    color: #ccc;
+    font-size: 16px;
+    align-self: flex-end;
+    position: relative;
+    bottom: 3px;
+    margin-left: 10px;
+}
+
+.download-artifacts-list-release-os-comment {
+    color: #888;
+}
+
+.download-artifacts-list-release-asset-size {
+    color: #ccc;
+    font-size: 12px;
+}
+
+.download-artifacts-list-release-os {
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .download-artifacts-list-release-header {
+        flex-direction: column;
+    }
+
+    .download-artifacts-list-release-header-date {
+        align-self: auto;
+        bottom: unset;
+        margin-left: 0;
+    }
+}
