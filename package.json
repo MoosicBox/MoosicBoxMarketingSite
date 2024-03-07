@@ -58,13 +58,13 @@
         "@solid-primitives/scheduled": "^1.4.3",
         "@solid-primitives/storage": "^2.1.4",
         "@solid-primitives/utils": "^6.2.3",
-        "astro": "^4.4.12",
+        "astro": "^4.4.13",
         "astro-sst": "^2.40.6",
         "date-fns": "^3.3.1",
         "howler": "^2.2.4",
         "nanostores": "^0.9.5",
         "solid-js": "^1.8.15",
-        "typescript": "^5.3.3"
+        "typescript": "^5.4.2"
     },
     "description": "",
     "version": "0.1.0",
