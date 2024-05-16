@@ -32,6 +32,7 @@ export interface GitHubRelease {
     name: string;
     html_url: string;
     created_at: string;
+    published_at: string;
     assets: Asset[];
 }
 
@@ -46,6 +47,7 @@ export interface OsRelease {
     version: string;
     url: string;
     createdAt: string;
+    publishedAt: string;
 }
 
 export interface OsAsset {
@@ -65,7 +67,7 @@ export async function getGitHubReleases(opts: {
 
     const releases = await requestJson<GitHubRelease[]>(releaseUrl);
 
-    releases.sort((a, b) => b.created_at.localeCompare(a.created_at));
+    releases.sort((a, b) => b.published_at.localeCompare(a.published_at));
 
     return releases;
 }
@@ -130,6 +132,7 @@ export function createOsRelease(release: GitHubRelease): OsRelease {
         version: name,
         url: html_url,
         createdAt: release.created_at,
+        publishedAt: release.published_at,
     };
 
     value.assets.sort((a, b) => {

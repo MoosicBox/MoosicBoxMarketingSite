@@ -33,7 +33,7 @@ export default function modalFunc() {
                                 <div>Release {release.version}</div>
                                 <div class="download-artifacts-list-release-header-date">
                                     {displayDate(
-                                        release.createdAt,
+                                        release.publishedAt,
                                         'LLLL dd, yyyy HH:mm:ss',
                                     )}
                                 </div>
