@@ -43,8 +43,8 @@
         "prettier-plugin-astro": "^0.13.0",
         "solid-js": "^1.7.11",
         "sst": "2.40.3",
-        "typescript": "^5.2.2",
         "vite": "^5.2.11",
+        "typescript": "5.5.0-dev.20240528",
         "vitest": "^1.6.0"
     },
     "dependencies": {
@@ -63,8 +63,7 @@
         "date-fns": "^3.6.0",
         "howler": "^2.2.4",
         "nanostores": "^0.9.5",
-        "solid-js": "^1.8.17",
-        "typescript": "^5.4.5"
+        "solid-js": "^1.8.17"
     },
     "description": "",
     "version": "0.1.0",
