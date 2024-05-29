@@ -5,6 +5,7 @@
 <header class="header-nav" data-turbo-permanent id="header-nav">
     <div class="header-nav-header">
         <a class="header-nav-header-link" href="/">
+            <img class="header-nav-header-logo-icon" src="/img/icon128.png" />
             <h1 class="header-nav-header-link-text">MoosicBox</h1>
         </a>
     </div>
@@ -47,7 +48,15 @@
         padding: 0 20px;
     }
 
+    .header-nav-header-logo-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+    }
+
     .header-nav-header-link {
+        display: flex;
+        align-items: center;
         color: white;
         text-decoration: none;
     }
