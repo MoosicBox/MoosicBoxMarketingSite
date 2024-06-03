@@ -128,7 +128,7 @@ export function createOsRelease(release: GitHubRelease): OsRelease {
             createAsset(
                 release,
                 'mac_intel',
-                'MoosicBox_aarch64.dmg',
+                'MoosicBox_x64.dmg',
                 mac_intel_matches,
             ),
             createAsset(
