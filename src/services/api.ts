@@ -120,15 +120,15 @@ export function createOsRelease(release: GitHubRelease): OsRelease {
             ),
             createAsset(
                 release,
-                'mac_intel',
-                'MoosicBox_aarch64.dmg',
+                'mac_apple_silicon',
+                'MoosicBox.dmg',
+                matches(/(.+?\.dmg|.+?_macos.*)/gi),
                 mac_intel_matches,
             ),
             createAsset(
                 release,
-                'mac_apple_silicon',
-                'MoosicBox.dmg',
-                matches(/(.+?\.dmg|.+?_macos.*)/gi),
+                'mac_intel',
+                'MoosicBox_aarch64.dmg',
                 mac_intel_matches,
             ),
             createAsset(
@@ -154,6 +154,16 @@ export function createOsRelease(release: GitHubRelease): OsRelease {
         if (os.lowerName === a.name) {
             return -1;
         } else if (os.lowerName === b.name) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    value.assets.sort((a, b) => {
+        if (a.name === 'mac_intel' && b.name !== 'mac_apple_silicon') {
+            return -1;
+        } else if (b.name === 'mac_intel' && a.name !== 'mac_apple_silicon') {
             return 1;
         } else {
             return 0;
