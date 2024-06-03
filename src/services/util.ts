@@ -533,6 +533,58 @@ export const jscd = (() => {
     };
 })();
 
+let isAppleSilicon: boolean | undefined;
+
+async function checkIsAppleSilicon(): Promise<boolean> {
+    if (typeof isAppleSilicon !== 'undefined') return isAppleSilicon;
+
+    if (navigator.userAgent.match(/OS X 10_([789]|1[01234])/)) {
+        isAppleSilicon = false;
+        console.debug('Is older macOS, not apple silicon');
+        return isAppleSilicon;
+    }
+
+    if (
+        'userAgentData' in navigator &&
+        typeof navigator.userAgentData === 'object' &&
+        navigator.userAgentData !== null &&
+        'getHighEntropyValues' in navigator.userAgentData &&
+        typeof navigator.userAgentData.getHighEntropyValues === 'function'
+    ) {
+        const values = await navigator.userAgentData.getHighEntropyValues([
+            'architecture',
+        ]);
+
+        isAppleSilicon =
+            values.architecture === 'arm' &&
+            values.mobile === false &&
+            values.platform === 'macOS';
+        console.debug('Is apple silicon?', isAppleSilicon);
+        return isAppleSilicon;
+    }
+
+    const w = document.createElement('canvas').getContext('webgl');
+    const d = w?.getExtension('WEBGL_debug_renderer_info');
+    const g = (d && w?.getParameter(d.UNMASKED_RENDERER_WEBGL)) || '';
+    if (g.match(/Apple/) && !g.match(/Apple GPU/)) {
+        console.debug('Is apple renderer');
+        isAppleSilicon = true;
+        return isAppleSilicon;
+    }
+
+    isAppleSilicon = true;
+    console.debug('Defaulting to apple silicon');
+    return isAppleSilicon;
+}
+
+function formatHeader(name: string, header: string): string {
+    if (name.startsWith('mac')) {
+        return header.replaceAll('_', '.');
+    }
+
+    return header;
+}
+
 export function getOsHeader(name: string): string {
     switch (name) {
         case 'windows':
@@ -552,17 +604,30 @@ export function getOsHeader(name: string): string {
     }
 }
 
-export const osName = jscd.os || '';
-export const version = jscd.osVersion;
+const osName = jscd.os || '';
+const version = jscd.osVersion;
+const lowerName =
+    osName?.toLowerCase().indexOf('mac') === 0
+        ? 'mac_intel'
+        : osName?.toLowerCase();
+const header = formatHeader(
+    lowerName,
+    osName + (version?.trim() ? ' ' + version : ''),
+);
 
 const osData = {
     os: osName,
     version,
-    lowerName:
-        osName?.toLowerCase().indexOf('mac') === 0
-            ? 'mac_apple_silicon'
-            : osName?.toLowerCase(),
-    header: osName + (version?.trim() ? ' ' + version : ''),
+    lowerName,
+    header,
 };
 
 export const os = osData;
+
+(async () => {
+    if (os.lowerName === 'mac_intel') {
+        if (await checkIsAppleSilicon()) {
+            os.lowerName = 'mac_apple_silicon';
+        }
+    }
+})();
