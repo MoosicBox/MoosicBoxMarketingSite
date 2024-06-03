@@ -6,7 +6,7 @@ import {
     type OsRelease,
 } from '~/services/api';
 import { displayDate, formatClassName, getSize } from '~/services/formatting';
-import { lowerOs, osHeader } from '~/services/util';
+import { getOsHeader, os } from '~/services/util';
 
 export default function modalFunc() {
     const [releases, setReleases] = createSignal<OsRelease[]>([]);
@@ -52,15 +52,20 @@ export default function modalFunc() {
                                             <div class="download-artifacts-list-release-os">
                                                 <Show
                                                     when={
-                                                        lowerOs ===
+                                                        os.lowerName ===
                                                         releaseAsset.name
                                                     }
                                                 >
                                                     <div class="download-artifacts-list-release-os-comment">
                                                         // We think you are
-                                                        running {osHeader}
+                                                        running {os.header}
                                                     </div>
                                                 </Show>
+                                                <h3 class="download-artifacts-list-release-os-header">
+                                                    {getOsHeader(
+                                                        releaseAsset.name,
+                                                    )}
+                                                </h3>
                                                 Download{' '}
                                                 <a
                                                     href={

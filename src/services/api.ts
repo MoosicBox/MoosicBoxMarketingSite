@@ -1,4 +1,4 @@
-import { QueryParams, lowerOs, objToStr } from './util';
+import { QueryParams, os, objToStr } from './util';
 
 class RequestError extends Error {
     constructor(public response: Response) {
@@ -77,11 +77,15 @@ function createAsset(
     name: string,
     assetName: string,
     assetMatcher: (assetName: string) => boolean,
+    assetNotMatcher?: (assetName: string) => boolean,
 ): OsAsset {
     const { assets } = release;
 
     const otherFormats = assets.filter(
-        (a) => a.name !== assetName && assetMatcher(a.name),
+        (a) =>
+            a.name !== assetName &&
+            assetMatcher(a.name) &&
+            (!assetNotMatcher || !assetNotMatcher(a.name)),
     );
     const asset =
         assets.find((a) => a.name === assetName) ?? otherFormats.shift();
@@ -102,6 +106,10 @@ export function createOsRelease(release: GitHubRelease): OsRelease {
         return (name) => name.match(value) !== null;
     }
 
+    const mac_intel_matches = matches(
+        /(.+?(x64|aarch64).*?\.dmg|.+?_macos_x64.*|.+?_x64_macos.*)/gi,
+    );
+
     const value: OsRelease = {
         assets: [
             createAsset(
@@ -112,9 +120,16 @@ export function createOsRelease(release: GitHubRelease): OsRelease {
             ),
             createAsset(
                 release,
-                'mac',
-                'MoosicBox_x64.dmg',
+                'mac_intel',
+                'MoosicBox_aarch64.dmg',
+                mac_intel_matches,
+            ),
+            createAsset(
+                release,
+                'mac_apple_silicon',
+                'MoosicBox.dmg',
                 matches(/(.+?\.dmg|.+?_macos.*)/gi),
+                mac_intel_matches,
             ),
             createAsset(
                 release,
@@ -136,9 +151,9 @@ export function createOsRelease(release: GitHubRelease): OsRelease {
     };
 
     value.assets.sort((a, b) => {
-        if (lowerOs === a.name) {
+        if (os.lowerName === a.name) {
             return -1;
-        } else if (lowerOs === b.name) {
+        } else if (os.lowerName === b.name) {
             return 1;
         } else {
             return 0;

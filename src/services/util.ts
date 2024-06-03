@@ -533,8 +533,36 @@ export const jscd = (() => {
     };
 })();
 
-export const os = jscd.os || '';
-export const osVersion = jscd.osVersion;
-export const lowerOs =
-    os?.toLowerCase().indexOf('mac') === 0 ? 'mac' : os?.toLowerCase();
-export const osHeader = os + (osVersion?.trim() ? ' ' + osVersion : '');
+export function getOsHeader(name: string): string {
+    switch (name) {
+        case 'windows':
+            return 'Windows';
+        case 'mac_intel':
+            return 'macOS Intel';
+        case 'mac_apple_silicon':
+            return 'macOS Apple Silicon';
+        case 'linux':
+            return 'Linux';
+        case 'android':
+            return 'Android';
+        case 'ios':
+            return 'iOS';
+        default:
+            throw new Error(`Invalid OS: ${name}`);
+    }
+}
+
+export const osName = jscd.os || '';
+export const version = jscd.osVersion;
+
+const osData = {
+    os: osName,
+    version,
+    lowerName:
+        osName?.toLowerCase().indexOf('mac') === 0
+            ? 'mac_apple_silicon'
+            : osName?.toLowerCase(),
+    header: osName + (version?.trim() ? ' ' + version : ''),
+};
+
+export const os = osData;
