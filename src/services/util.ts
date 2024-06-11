@@ -627,7 +627,7 @@ export const os = osData;
 (async () => {
     if (os.lowerName === 'mac_intel') {
         if (await checkIsAppleSilicon()) {
-            os.lowerName = 'mac_apple_silicon';
+            console.debug('Using apple silicon');
         }
     }
 })();
