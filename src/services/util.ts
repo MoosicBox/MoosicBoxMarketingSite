@@ -590,7 +590,7 @@ export function getOsHeader(name: string): string {
         case 'windows':
             return 'Windows';
         case 'mac_intel':
-            return 'macOS Intel';
+            return 'macOS';
         case 'mac_apple_silicon':
             return 'macOS Apple Silicon';
         case 'linux':
