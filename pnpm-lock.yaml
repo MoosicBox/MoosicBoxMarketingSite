@@ -13,7 +13,7 @@ dependencies:
     version: 8.3.2(astro@4.13.1)
   '@astrojs/solid-js':
     specifier: ^4.4.0
-    version: 4.4.0(@testing-library/jest-dom@5.17.0)(solid-js@1.8.19)(vite@5.3.5)
+    version: 4.4.0(@testing-library/jest-dom@5.17.0)(solid-js@1.8.19)(vite@5.4.0)
   '@aws-sdk/client-ssm':
     specifier: ^3.624.0
     version: 3.624.0
@@ -122,8 +122,8 @@ devDependencies:
     specifier: 5.5.0-dev.20240528
     version: 5.5.0-dev.20240528
   vite:
-    specifier: ^5.3.5
-    version: 5.3.5
+    specifier: ^5.4.0
+    version: 5.4.0
   vitest:
     specifier: ^1.6.0
     version: 1.6.0(@vitest/ui@1.6.0)(jsdom@24.1.1)
@@ -255,7 +255,7 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/solid-js@4.4.0(@testing-library/jest-dom@5.17.0)(solid-js@1.8.19)(vite@5.3.5):
+  /@astrojs/solid-js@4.4.0(@testing-library/jest-dom@5.17.0)(solid-js@1.8.19)(vite@5.4.0):
     resolution: {integrity: sha512-nNX7x9dTcutb69yVGGC7/4vRECsV0dySmkl48AeV4qIAdCYXuH74Yu8KvPwRWRjtF0Z2Xp9ZgXG5KYCVHdBXJw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
@@ -266,7 +266,7 @@ packages:
         optional: true
     dependencies:
       solid-js: 1.8.19
-      vite-plugin-solid: 2.10.2(@testing-library/jest-dom@5.17.0)(solid-js@1.8.19)(vite@5.3.5)
+      vite-plugin-solid: 2.10.2(@testing-library/jest-dom@5.17.0)(solid-js@1.8.19)(vite@5.4.0)
     transitivePeerDependencies:
       - '@testing-library/jest-dom'
       - supports-color
@@ -573,8 +573,8 @@ packages:
       - aws-crt
     dev: true
 
-  /@aws-sdk/client-eventbridge@3.624.0:
-    resolution: {integrity: sha512-02HxeImNQv+yA+36Y+gn5ZM2v3JhG9gbbtXokv1YoByh9Ot9WG5Xm5Fsj9i6Dno34LneA2HCQqdMws67woXxVg==}
+  /@aws-sdk/client-eventbridge@3.626.0:
+    resolution: {integrity: sha512-xQKP7zzRVmrkVnSdXOzble63hckof0cDzBlYD27dtM7hsLK2DIWyTgqbX08hLzjMaTOofNGfFBRFu8Fao0JfZQ==}
     engines: {node: '>=16.0.0'}
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
@@ -588,7 +588,7 @@ packages:
       '@aws-sdk/middleware-recursion-detection': 3.620.0
       '@aws-sdk/middleware-user-agent': 3.620.0
       '@aws-sdk/region-config-resolver': 3.614.0
-      '@aws-sdk/signature-v4-multi-region': 3.624.0
+      '@aws-sdk/signature-v4-multi-region': 3.626.0
       '@aws-sdk/types': 3.609.0
       '@aws-sdk/util-endpoints': 3.614.0
       '@aws-sdk/util-user-agent-browser': 3.609.0
@@ -794,9 +794,9 @@ packages:
       '@aws-sdk/util-user-agent-node': 3.614.0(aws-crt@1.21.3)
       '@smithy/config-resolver': 3.0.5
       '@smithy/core': 2.3.2
-      '@smithy/eventstream-serde-browser': 3.0.5
+      '@smithy/eventstream-serde-browser': 3.0.6
       '@smithy/eventstream-serde-config-resolver': 3.0.3
-      '@smithy/eventstream-serde-node': 3.0.4
+      '@smithy/eventstream-serde-node': 3.0.5
       '@smithy/fetch-http-handler': 3.2.4
       '@smithy/hash-node': 3.0.3
       '@smithy/invalid-dependency': 3.0.3
@@ -876,8 +876,8 @@ packages:
       - aws-crt
     dev: true
 
-  /@aws-sdk/client-s3@3.624.0:
-    resolution: {integrity: sha512-A18tgTKC4ZTAwV8i3pkyAL1XDLgH7WGS5hZA/0FOntI5l+icztGZFF8CdeYWEAFnZA7SfHK6vmtEbIQDOzTTAA==}
+  /@aws-sdk/client-s3@3.626.0:
+    resolution: {integrity: sha512-+ul1NEdiAuq5L0lhxWb+FcQuw+1RKU4lNugdX/EF3Lr6Bpuo384K/4r9cRwOo/6PqRYMIengBMc9Q2HVAu8ZWg==}
     engines: {node: '>=16.0.0'}
     dependencies:
       '@aws-crypto/sha1-browser': 5.2.0
@@ -894,11 +894,11 @@ packages:
       '@aws-sdk/middleware-location-constraint': 3.609.0
       '@aws-sdk/middleware-logger': 3.609.0
       '@aws-sdk/middleware-recursion-detection': 3.620.0
-      '@aws-sdk/middleware-sdk-s3': 3.624.0
+      '@aws-sdk/middleware-sdk-s3': 3.626.0
       '@aws-sdk/middleware-ssec': 3.609.0
       '@aws-sdk/middleware-user-agent': 3.620.0
       '@aws-sdk/region-config-resolver': 3.614.0
-      '@aws-sdk/signature-v4-multi-region': 3.624.0
+      '@aws-sdk/signature-v4-multi-region': 3.626.0
       '@aws-sdk/types': 3.609.0
       '@aws-sdk/util-endpoints': 3.614.0
       '@aws-sdk/util-user-agent-browser': 3.609.0
@@ -906,9 +906,9 @@ packages:
       '@aws-sdk/xml-builder': 3.609.0
       '@smithy/config-resolver': 3.0.5
       '@smithy/core': 2.3.2
-      '@smithy/eventstream-serde-browser': 3.0.5
+      '@smithy/eventstream-serde-browser': 3.0.6
       '@smithy/eventstream-serde-config-resolver': 3.0.3
-      '@smithy/eventstream-serde-node': 3.0.4
+      '@smithy/eventstream-serde-node': 3.0.5
       '@smithy/fetch-http-handler': 3.2.4
       '@smithy/hash-blob-browser': 3.1.2
       '@smithy/hash-node': 3.0.3
@@ -1379,8 +1379,8 @@ packages:
       uuid: 8.3.2
     dev: true
 
-  /@aws-sdk/middleware-sdk-s3@3.624.0:
-    resolution: {integrity: sha512-HUiaZ6+JXcG0qQda10ZxDGJvbT71YUp1zX+oikIsfTUeq0N75O82OY3Noqd7cyjEVtsGSo/y0e6U3aV1hO+wPw==}
+  /@aws-sdk/middleware-sdk-s3@3.626.0:
+    resolution: {integrity: sha512-frFh6GQ1OEGueB0fL6Ft5rdHF+eu8JZUREjeBNEcg1qRqtMpPOlYkKzJ434d4zo+JHSK5xKFeb/Gu/kvB4LxEA==}
     engines: {node: '>=16.0.0'}
     dependencies:
       '@aws-sdk/core': 3.624.0
@@ -1442,11 +1442,11 @@ packages:
       '@smithy/util-middleware': 3.0.3
       tslib: 2.6.3
 
-  /@aws-sdk/signature-v4-crt@3.624.0:
-    resolution: {integrity: sha512-OQKAmBukXDUqJOthqK7QkEW3fa7PyCeNHChkTNfCJtsEF+z0651RYIJVyul1+eG3skaYuo6kcUWQlqpAHFF/kw==}
+  /@aws-sdk/signature-v4-crt@3.626.0:
+    resolution: {integrity: sha512-CCrBUaI/GJs/7oyO+MLZZLxHHgR6NBMCvrh8qmmlm+x0c33tESYAJxYui6pdr7znlRpkikJqMxQSblrMBbl5ew==}
     engines: {node: '>=16.0.0'}
     dependencies:
-      '@aws-sdk/signature-v4-multi-region': 3.624.0
+      '@aws-sdk/signature-v4-multi-region': 3.626.0
       '@aws-sdk/types': 3.609.0
       '@aws-sdk/util-user-agent-node': 3.614.0(aws-crt@1.21.3)
       '@smithy/querystring-parser': 3.0.3
@@ -1462,11 +1462,11 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@aws-sdk/signature-v4-multi-region@3.624.0:
-    resolution: {integrity: sha512-gu1SfCyUPnq4s0AI1xdAl0whHwhkTyltg4QZWc4vnZvEVudCpJVVxEcroUHYQIO51YyVUT9jSMS1SVRe5VqPEw==}
+  /@aws-sdk/signature-v4-multi-region@3.626.0:
+    resolution: {integrity: sha512-n3yN668b2XLY6155y2KRCCDfA67Acxf/wUS60wGPNrJKk9O5AZzGQzZF8tLfMSng5YBS/CCHN40ooMhRwSLWUg==}
     engines: {node: '>=16.0.0'}
     dependencies:
-      '@aws-sdk/middleware-sdk-s3': 3.624.0
+      '@aws-sdk/middleware-sdk-s3': 3.626.0
       '@aws-sdk/types': 3.609.0
       '@smithy/protocol-http': 4.1.0
       '@smithy/signature-v4': 4.1.0
@@ -2934,11 +2934,11 @@ packages:
       tslib: 2.6.3
     dev: true
 
-  /@smithy/eventstream-serde-browser@3.0.5:
-    resolution: {integrity: sha512-dEyiUYL/ekDfk+2Ra4GxV+xNnFoCmk1nuIXg+fMChFTrM2uI/1r9AdiTYzPqgb72yIv/NtAj6C3dG//1wwgakQ==}
+  /@smithy/eventstream-serde-browser@3.0.6:
+    resolution: {integrity: sha512-2hM54UWQUOrki4BtsUI1WzmD13/SeaqT/AB3EUJKbcver/WgKNaiJ5y5F5XXuVe6UekffVzuUDrBZVAA3AWRpQ==}
     engines: {node: '>=16.0.0'}
     dependencies:
-      '@smithy/eventstream-serde-universal': 3.0.4
+      '@smithy/eventstream-serde-universal': 3.0.5
       '@smithy/types': 3.3.0
       tslib: 2.6.3
     dev: true
@@ -2951,17 +2951,17 @@ packages:
       tslib: 2.6.3
     dev: true
 
-  /@smithy/eventstream-serde-node@3.0.4:
-    resolution: {integrity: sha512-mjlG0OzGAYuUpdUpflfb9zyLrBGgmQmrobNT8b42ZTsGv/J03+t24uhhtVEKG/b2jFtPIHF74Bq+VUtbzEKOKg==}
+  /@smithy/eventstream-serde-node@3.0.5:
+    resolution: {integrity: sha512-+upXvnHNyZP095s11jF5dhGw/Ihzqwl5G+/KtMnoQOpdfC3B5HYCcDVG9EmgkhJMXJlM64PyN5gjJl0uXFQehQ==}
     engines: {node: '>=16.0.0'}
     dependencies:
-      '@smithy/eventstream-serde-universal': 3.0.4
+      '@smithy/eventstream-serde-universal': 3.0.5
       '@smithy/types': 3.3.0
       tslib: 2.6.3
     dev: true
 
-  /@smithy/eventstream-serde-universal@3.0.4:
-    resolution: {integrity: sha512-Od9dv8zh3PgOD7Vj4T3HSuox16n0VG8jJIM2gvKASL6aCtcS8CfHZDWe1Ik3ZXW6xBouU+45Q5wgoliWDZiJ0A==}
+  /@smithy/eventstream-serde-universal@3.0.5:
+    resolution: {integrity: sha512-5u/nXbyoh1s4QxrvNre9V6vfyoLWuiVvvd5TlZjGThIikc3G+uNiG9uOTCWweSRjv1asdDIWK7nOmN7le4RYHQ==}
     engines: {node: '>=16.0.0'}
     dependencies:
       '@smithy/eventstream-codec': 3.1.2
@@ -4388,8 +4388,8 @@ packages:
       tsconfck: 3.1.1(typescript@5.5.0-dev.20240528)
       unist-util-visit: 5.0.0
       vfile: 6.0.2
-      vite: 5.3.5
-      vitefu: 0.2.5(vite@5.3.5)
+      vite: 5.4.0
+      vitefu: 0.2.5(vite@5.4.0)
       which-pm: 3.0.0
       yargs-parser: 21.1.1
       zod: 3.23.8
@@ -4401,6 +4401,7 @@ packages:
       - less
       - lightningcss
       - sass
+      - sass-embedded
       - stylus
       - sugarss
       - supports-color
@@ -4491,8 +4492,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /aws-sdk@2.1669.0:
-    resolution: {integrity: sha512-ua3AfvS2rUiOpf9choxNXLKE3T70yY6klGovdekXd5ZTwzDXQoYw1dokfArIub/2BM9Dmgi/bFq/crnz83tX0w==}
+  /aws-sdk@2.1670.0:
+    resolution: {integrity: sha512-OvHPuCKubcp5u0xbfqxSYjGnNiK38ZF52Gsog185UgaO4LfGL51QXs974XLub4rztLa3/qOGynKI3bpFsbSQoA==}
     engines: {node: '>= 10.0.0'}
     requiresBuild: true
     dependencies:
@@ -4641,7 +4642,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001649
+      caniuse-lite: 1.0.30001650
       electron-to-chromium: 1.5.5
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
@@ -4716,8 +4717,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: false
 
-  /caniuse-lite@1.0.30001649:
-    resolution: {integrity: sha512-fJegqZZ0ZX8HOWr6rcafGr72+xcgJKI9oWfDW5DrD7ExUtgZC7a7R7ZYmZqplh7XDocFdGeIFn7roAxhOeYrPQ==}
+  /caniuse-lite@1.0.30001650:
+    resolution: {integrity: sha512-fgEc7hP/LB7iicdXHUI9VsBsMZmUmlVJeQP2qqQW+3lkqVhbmjEU8zp+h5stWeilX+G7uXuIUIIlWlDw9jdt8g==}
 
   /ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -4731,7 +4732,7 @@ packages:
       '@aws-cdk/cloud-assembly-schema': 2.124.0
       '@aws-cdk/cx-api': 2.124.0(@aws-cdk/cloud-assembly-schema@2.124.0)
       archiver: 5.3.2
-      aws-sdk: 2.1669.0
+      aws-sdk: 2.1670.0
       glob: 7.2.3
       mime: 2.6.0
       yargs: 16.2.0
@@ -6012,8 +6013,8 @@ packages:
       is-callable: 1.2.7
     dev: true
 
-  /foreground-child@3.2.1:
-    resolution: {integrity: sha512-PXUUyLqrR2XCWICfv6ukppP96sdFwWbNEnfEMt7jNsISjMsvaLNinAHNDYyvkyU+SZG2BTSbT5NjG+vZslfGTA==}
+  /foreground-child@3.3.0:
+    resolution: {integrity: sha512-Ld2g8rrAyMYFXBhEqMz8ZAHBi4J4uS1i/CxGMDnjyFWddMXLVcDp051DZfu+t7+ab7Wv6SMqpWmyFIj5UbfFvg==}
     engines: {node: '>=14'}
     dependencies:
       cross-spawn: 7.0.3
@@ -6154,7 +6155,7 @@ packages:
     resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
     hasBin: true
     dependencies:
-      foreground-child: 3.2.1
+      foreground-child: 3.3.0
       jackspeak: 3.4.3
       minimatch: 9.0.5
       minipass: 7.1.2
@@ -9092,20 +9093,20 @@ packages:
       '@aws-crypto/sha256-js': 5.2.0
       '@aws-sdk/client-cloudformation': 3.624.0
       '@aws-sdk/client-ecs': 3.624.0
-      '@aws-sdk/client-eventbridge': 3.624.0
+      '@aws-sdk/client-eventbridge': 3.626.0
       '@aws-sdk/client-iam': 3.624.0
       '@aws-sdk/client-iot': 3.624.0
       '@aws-sdk/client-iot-data-plane': 3.624.0
       '@aws-sdk/client-lambda': 3.624.0
       '@aws-sdk/client-rds-data': 3.624.0
-      '@aws-sdk/client-s3': 3.624.0
+      '@aws-sdk/client-s3': 3.626.0
       '@aws-sdk/client-ssm': 3.624.0
       '@aws-sdk/client-sts': 3.624.0
       '@aws-sdk/config-resolver': 3.374.0
       '@aws-sdk/credential-providers': 3.624.0(@aws-sdk/client-sso-oidc@3.624.0)
       '@aws-sdk/middleware-retry': 3.374.0
       '@aws-sdk/middleware-signing': 3.620.0
-      '@aws-sdk/signature-v4-crt': 3.624.0
+      '@aws-sdk/signature-v4-crt': 3.626.0
       '@aws-sdk/smithy-client': 3.374.0
       '@babel/core': 7.25.2
       '@babel/generator': 7.25.0
@@ -9115,7 +9116,7 @@ packages:
       adm-zip: 0.5.15
       aws-cdk-lib: 2.124.0(constructs@10.3.0)
       aws-iot-device-sdk: 2.2.15
-      aws-sdk: 2.1669.0
+      aws-sdk: 2.1670.0
       builtin-modules: 3.2.0
       cdk-assets: 2.124.0
       chalk: 5.3.0
@@ -9793,19 +9794,20 @@ packages:
       debug: 4.3.6
       pathe: 1.1.2
       picocolors: 1.0.1
-      vite: 5.3.5
+      vite: 5.4.0
     transitivePeerDependencies:
       - '@types/node'
       - less
       - lightningcss
       - sass
+      - sass-embedded
       - stylus
       - sugarss
       - supports-color
       - terser
     dev: true
 
-  /vite-plugin-solid@2.10.2(@testing-library/jest-dom@5.17.0)(solid-js@1.8.19)(vite@5.3.5):
+  /vite-plugin-solid@2.10.2(@testing-library/jest-dom@5.17.0)(solid-js@1.8.19)(vite@5.4.0):
     resolution: {integrity: sha512-AOEtwMe2baBSXMXdo+BUwECC8IFHcKS6WQV/1NEd+Q7vHPap5fmIhLcAzr+DUJ04/KHx/1UBU0l1/GWP+rMAPQ==}
     peerDependencies:
       '@testing-library/jest-dom': ^5.16.6 || ^5.17.0 || ^6.*
@@ -9822,14 +9824,14 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.8.19
       solid-refresh: 0.6.3(solid-js@1.8.19)
-      vite: 5.3.5
-      vitefu: 0.2.5(vite@5.3.5)
+      vite: 5.4.0
+      vitefu: 0.2.5(vite@5.4.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /vite@5.3.5:
-    resolution: {integrity: sha512-MdjglKR6AQXQb9JGiS7Rc2wC6uMjcm7Go/NHNO63EwiJXfuk9PgqiP/n5IDJCziMkfw9n4Ubp7lttNwz+8ZVKA==}
+  /vite@5.4.0:
+    resolution: {integrity: sha512-5xokfMX0PIiwCMCMb9ZJcMyh5wbBun0zUzKib+L65vAZ8GY9ePZMXxFrHbr/Kyll2+LSCY7xtERPpxkBDKngwg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -9837,6 +9839,7 @@ packages:
       less: '*'
       lightningcss: ^1.21.0
       sass: '*'
+      sass-embedded: '*'
       stylus: '*'
       sugarss: '*'
       terser: ^5.4.0
@@ -9848,6 +9851,8 @@ packages:
       lightningcss:
         optional: true
       sass:
+        optional: true
+      sass-embedded:
         optional: true
       stylus:
         optional: true
@@ -9862,7 +9867,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
 
-  /vitefu@0.2.5(vite@5.3.5):
+  /vitefu@0.2.5(vite@5.4.0):
     resolution: {integrity: sha512-SgHtMLoqaeeGnd2evZ849ZbACbnwQCIwRH57t18FxcXoZop0uQu0uzlIhJBlF/eWVzuce0sHeqPcDo+evVcg8Q==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0
@@ -9870,7 +9875,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.3.5
+      vite: 5.4.0
     dev: false
 
   /vitest@1.6.0(@vitest/ui@1.6.0)(jsdom@24.1.1):
@@ -9917,13 +9922,14 @@ packages:
       strip-literal: 2.1.0
       tinybench: 2.9.0
       tinypool: 0.8.4
-      vite: 5.3.5
+      vite: 5.4.0
       vite-node: 1.6.0
       why-is-node-running: 2.3.0
     transitivePeerDependencies:
       - less
       - lightningcss
       - sass
+      - sass-embedded
       - stylus
       - sugarss
       - supports-color
