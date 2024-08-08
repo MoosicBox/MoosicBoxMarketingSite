@@ -28,3 +28,5 @@ gitignore
 Thumbs.db
 
 .sst/
+
+.astro/settings.json
