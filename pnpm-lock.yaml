@@ -10,7 +10,7 @@ dependencies:
     version: 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.3.3)(typescript@5.5.0-dev.20240528)
   '@astrojs/node':
     specifier: ^8.3.3
-    version: 8.3.3(astro@4.14.3)
+    version: 8.3.3(astro@4.14.4)
   '@astrojs/solid-js':
     specifier: ^4.4.1
     version: 4.4.1(@testing-library/jest-dom@5.17.0)(solid-js@1.8.21)(vite@5.4.2)
@@ -36,8 +36,8 @@ dependencies:
     specifier: ^6.2.3
     version: 6.2.3(solid-js@1.8.21)
   astro:
-    specifier: ^4.14.3
-    version: 4.14.3(typescript@5.5.0-dev.20240528)
+    specifier: ^4.14.4
+    version: 4.14.4(typescript@5.5.0-dev.20240528)
   astro-sst:
     specifier: ^2.43.5
     version: 2.43.5
@@ -238,12 +238,12 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/node@8.3.3(astro@4.14.3):
+  /@astrojs/node@8.3.3(astro@4.14.4):
     resolution: {integrity: sha512-idrKhnnPSi0ABV+PCQsRQqVNwpOvVDF/+fkwcIiE8sr9J8EMvW9g/oyAt8T4X2OBJ8FUzYPL8klfCdG7r0eB5g==}
     peerDependencies:
       astro: ^4.2.0
     dependencies:
-      astro: 4.14.3(typescript@5.5.0-dev.20240528)
+      astro: 4.14.4(typescript@5.5.0-dev.20240528)
       send: 0.18.0
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -781,8 +781,8 @@ packages:
       - aws-crt
     dev: true
 
-  /@aws-sdk/client-lambda@3.635.0:
-    resolution: {integrity: sha512-py7XtJ4lULpVogpYXIGH/jcPA6RlHuSFJCzv3NGCilVQpKftcsXy7+ckx0Y+pEJjwCpP8G2RhHNcSpNYfxaPbg==}
+  /@aws-sdk/client-lambda@3.636.0:
+    resolution: {integrity: sha512-rJitBBQAEVdyf4E6PhwFwD7uIM222dfx2oEIuFKkUb5rMKaFocnJbzvS3yGv/dZwDcUtMV5+5ibMCfgE8gAiJg==}
     engines: {node: '>=16.0.0'}
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
@@ -2618,7 +2618,7 @@ packages:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 22.4.2
+      '@types/node': 22.5.0
       '@types/yargs': 17.0.33
       chalk: 4.1.2
 
@@ -3712,8 +3712,8 @@ packages:
       '@types/unist': 3.0.3
     dev: false
 
-  /@types/node@22.4.2:
-    resolution: {integrity: sha512-nAvM3Ey230/XzxtyDcJ+VjvlzpzoHwLsF7JaDRfoI0ytO0mVheerNmM45CtA0yOILXwXXxOrcUWH3wltX+7PSw==}
+  /@types/node@22.5.0:
+    resolution: {integrity: sha512-DkFrJOe+rfdHTqqMg0bSNlGlQ85hSoh2TPzZyhHsXnMtligRWpxUySiyw8FY14ITt24HVCiQPWxS3KO/QlGmWg==}
     dependencies:
       undici-types: 6.19.8
 
@@ -3732,7 +3732,7 @@ packages:
   /@types/ws@8.5.12:
     resolution: {integrity: sha512-3tPRkv1EtkDpzlgyKyI8pGsGZAGPEaXeu0DOj5DI25Ja91bdAYddYHbADRYVrZMRbfW+1l5YwXVDKohDJNQxkQ==}
     dependencies:
-      '@types/node': 22.4.2
+      '@types/node': 22.5.0
 
   /@types/yargs-parser@21.0.3:
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==}
@@ -4340,8 +4340,8 @@ packages:
       set-cookie-parser: 2.7.0
     dev: false
 
-  /astro@4.14.3(typescript@5.5.0-dev.20240528):
-    resolution: {integrity: sha512-+Hox1EhiS5iHy4pfZaLidpD9x7WVAcgGgjTo1JOYSQ0+a2ZA9mbLtGVEXbUeeYweviNc0ZNHMnI4r9S2e8xnXg==}
+  /astro@4.14.4(typescript@5.5.0-dev.20240528):
+    resolution: {integrity: sha512-gpHGyY9qVJg1WXD/0UFoV3cdGZifhmCkJ3fuYV1zUlh+lWbjEB7/cE+KoSvj6aXHJGyLuTbvWOoxZs2yAdnREw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
     dependencies:
@@ -4511,8 +4511,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /aws-sdk@2.1679.0:
-    resolution: {integrity: sha512-76zSe/U7+5hzyGD7KAs71of1r6tRhrq+tXsOYbCDKPVqqtjxQiy88n0AC0Tcjx29nQSegydyjHxg27YJlcCXOg==}
+  /aws-sdk@2.1680.0:
+    resolution: {integrity: sha512-XHNyhvVB49DC7Ea7+Gsvy4B+xP7tyry6Gw3b9g/DcilA1xmxxRzu8VE9GJ2rP4jYMc/TkX9FHkp5WLo57sITZA==}
     engines: {node: '>= 10.0.0'}
     requiresBuild: true
     dependencies:
@@ -4662,7 +4662,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001651
-      electron-to-chromium: 1.5.12
+      electron-to-chromium: 1.5.13
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
 
@@ -4751,7 +4751,7 @@ packages:
       '@aws-cdk/cloud-assembly-schema': 2.124.0
       '@aws-cdk/cx-api': 2.124.0(@aws-cdk/cloud-assembly-schema@2.124.0)
       archiver: 5.3.2
-      aws-sdk: 2.1679.0
+      aws-sdk: 2.1680.0
       glob: 7.2.3
       mime: 2.6.0
       yargs: 16.2.0
@@ -5326,8 +5326,8 @@ packages:
   /ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  /electron-to-chromium@1.5.12:
-    resolution: {integrity: sha512-tIhPkdlEoCL1Y+PToq3zRNehUaKp3wBX/sr7aclAWdIWjvqAe/Im/H0SiCM4c1Q8BLPHCdoJTol+ZblflydehA==}
+  /electron-to-chromium@1.5.13:
+    resolution: {integrity: sha512-lbBcvtIJ4J6sS4tb5TLp1b4LyfCdMkwStzXPyAgVgTRAsep4bvrAGaBOP7ZJtQMNJpSQ9SqG4brWOroNaQtm7Q==}
 
   /emmet@2.4.7:
     resolution: {integrity: sha512-O5O5QNqtdlnQM2bmKHtJgyChcrFMgQuulI+WdiOw2NArzprUqqxUW6bgYtKvzKgrsYpuLWalOkdhNP+1jluhCA==}
@@ -5561,7 +5561,7 @@ packages:
     resolution: {integrity: sha512-WFj2isz22JahUv+B788TlO3N6zL3nNJGU8CcZbPZvVEkBPaJdCV4vy5wyghty5ROFbCRnm132v8BScu5/1BQ8g==}
     dependencies:
       debug: 3.2.7
-      is-core-module: 2.15.0
+      is-core-module: 2.15.1
       resolve: 1.22.8
     transitivePeerDependencies:
       - supports-color
@@ -5637,7 +5637,7 @@ packages:
       eslint-import-resolver-node: 0.3.9
       eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.18.0)(eslint-import-resolver-node@0.3.9)(eslint@8.57.0)
       hasown: 2.0.2
-      is-core-module: 2.15.0
+      is-core-module: 2.15.1
       is-glob: 4.0.3
       minimatch: 3.1.2
       object.fromentries: 2.0.8
@@ -6689,8 +6689,8 @@ packages:
       ci-info: 3.9.0
     dev: true
 
-  /is-core-module@2.15.0:
-    resolution: {integrity: sha512-Dd+Lb2/zvk9SKy1TGCt1wFJFo/MWBPMX5x7KcvLajWTGuomczdQX61PvY5yK6SVACwpoexWo81IfFyoKY2QnTA==}
+  /is-core-module@2.15.1:
+    resolution: {integrity: sha512-z0vtXSwucUJtANQWldhbtbt7BnL0vxiFjIdDLAatwhDYty2bad6s+rijD6Ri4YuYJubLzIJLUidCh09e1djEVQ==}
     engines: {node: '>= 0.4'}
     dependencies:
       hasown: 2.0.2
@@ -6972,7 +6972,7 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.4.2
+      '@types/node': 22.5.0
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -8701,7 +8701,7 @@ packages:
     resolution: {integrity: sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==}
     hasBin: true
     dependencies:
-      is-core-module: 2.15.0
+      is-core-module: 2.15.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
@@ -9137,7 +9137,7 @@ packages:
       '@aws-sdk/client-iam': 3.635.0
       '@aws-sdk/client-iot': 3.635.0
       '@aws-sdk/client-iot-data-plane': 3.635.0
-      '@aws-sdk/client-lambda': 3.635.0
+      '@aws-sdk/client-lambda': 3.636.0
       '@aws-sdk/client-rds-data': 3.635.0
       '@aws-sdk/client-s3': 3.635.0
       '@aws-sdk/client-ssm': 3.635.0
@@ -9156,7 +9156,7 @@ packages:
       adm-zip: 0.5.15
       aws-cdk-lib: 2.124.0(constructs@10.3.0)
       aws-iot-device-sdk: 2.2.15
-      aws-sdk: 2.1679.0
+      aws-sdk: 2.1680.0
       builtin-modules: 3.2.0
       cdk-assets: 2.124.0
       chalk: 5.3.0
