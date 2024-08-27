@@ -1,9 +1,22 @@
 {
     "name": "@moosicbox/moosicbox-marketing-site",
+    "description": "MoosicBox Marketing Website",
+    "version": "0.1.0",
+    "main": "index.mjs",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MoosicBox/MoosicBoxMarketingSite.git"
+    },
+    "author": "Braden Steffaniak",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/MoosicBox/MoosicBoxMarketingSite/issues"
+    },
+    "homepage": "https://github.com/MoosicBox/MoosicBoxMarketingSite#readme",
     "scripts": {
         "astro": "astro",
         "test": "vitest run",
-        "dev": "sst bind \"astro dev --host --port 4000\"",
+        "dev": "astro dev --host --port 4000",
         "solid:dev": "astro dev --host --port 4000",
         "build": "astro check && astro build",
         "preview": "astro preview",
@@ -31,8 +44,6 @@
         "@typescript-eslint/parser": "^7.18.0",
         "@vitest/coverage-v8": "^1.6.0",
         "@vitest/ui": "^1.6.0",
-        "aws-cdk-lib": "2.124.0",
-        "constructs": "10.3.0",
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-diff": "^2.0.3",
@@ -42,8 +53,8 @@
         "prettier": "^3.3.3",
         "prettier-plugin-astro": "^0.13.0",
         "solid-js": "^1.7.11",
-        "sst": "2.40.3",
-        "typescript": "5.5.0-dev.20240528",
+        "sst": "^3.0.70",
+        "typescript": "^5.5.4",
         "vite": "^5.4.2",
         "vitest": "^1.6.0"
     },
@@ -64,18 +75,5 @@
         "howler": "^2.2.4",
         "nanostores": "^0.9.5",
         "solid-js": "^1.8.21"
-    },
-    "description": "",
-    "version": "0.1.0",
-    "main": "index.mjs",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/MoosicBox/MoosicBoxMarketingSite.git"
-    },
-    "author": "Braden Steffaniak",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/MoosicBox/MoosicBoxMarketingSite/issues"
-    },
-    "homepage": "https://github.com/MoosicBox/MoosicBoxMarketingSite#readme"
+    }
 }

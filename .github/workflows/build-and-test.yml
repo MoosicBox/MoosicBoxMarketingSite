@@ -36,7 +36,9 @@ jobs:
                       ${{ matrix.os }}-pnpm-store-
 
             - name: pnpm install
-              run: pnpm install
+              run: |
+                  pnpm install
+                  pnpm sst install
 
             - name: pretty
               run: pnpm pretty

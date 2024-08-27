@@ -1,41 +1,26 @@
-import { SSMClient } from '@aws-sdk/client-ssm';
-import type { SSTConfig } from 'sst';
-import { fetchSstSecret } from 'sst-secrets';
-import { AstroSite, type StackContext } from 'sst/constructs';
+/// <reference path="./.sst/platform/config.d.ts" />
 
-export default {
-    config(_input) {
+import { readdirSync } from 'fs';
+
+export default $config({
+    app(input) {
         return {
             name: 'moosicbox-marketing',
-            region: 'us-east-1',
+            removal: input?.stage === 'prod' ? 'retain' : 'remove',
+            home: 'aws',
+            providers: { aws: { region: 'us-east-1' } },
         };
     },
-    async stacks(app) {
-        await app.stack(async ({ stack }: StackContext): Promise<void> => {
-            const ssm = new SSMClient({ region: stack.region });
-            const isProd = stack.stage === 'prod';
-            const DOMAIN = await fetchSstSecret(
-                ssm,
-                app.name,
-                'DOMAIN',
-                stack.stage,
-            );
+    async run() {
+        const outputs = {};
 
-            const subdomain = isProd ? '' : `marketing-${stack.stage}.`;
-            const domainName = `${subdomain}${DOMAIN}`;
+        for (const value of readdirSync('./infra/')) {
+            const result = await import(`./infra/${value}`);
+            if (result.outputs) {
+                Object.assign(outputs, result.outputs);
+            }
+        }
 
-            const site = new AstroSite(stack, 'MoosicBox', {
-                buildCommand: 'pnpm build --config astro.config.sst.mjs',
-                customDomain: {
-                    hostedZone: DOMAIN,
-                    domainName,
-                },
-            });
-
-            stack.addOutputs({
-                url: site.url,
-                host: `https://${domainName}`,
-            });
-        });
+        return outputs;
     },
-} satisfies SSTConfig;
+});
