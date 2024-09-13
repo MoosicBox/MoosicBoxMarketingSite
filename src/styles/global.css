@@ -1,3 +1,7 @@
+body {
+    background-color: #181a1b;
+}
+
 hr {
     margin: 10px 0;
     padding: 0;
@@ -5,12 +9,6 @@ hr {
     border-top: 2px solid #ccc;
 }
 
-a {
-    color: black;
-}
-
-@media (prefers-color-scheme: dark) {
-    a {
-        color: white;
-    }
+* {
+    color: white;
 }
