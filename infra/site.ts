@@ -1,26 +1,7 @@
-import { exec } from 'node:child_process';
-
-async function getHostedZoneId(domain: string): Promise<string> {
-    return new Promise((resolve, reject) => {
-        exec(
-            `aws route53 list-hosted-zones-by-name --query "HostedZones[?Name=='${domain}.'].Id"  --output text | sed s#/hostedzone/##`,
-            (error, stdout, stderr) => {
-                if (error) {
-                    console.error(stderr);
-                    return reject(error);
-                }
-                resolve(stdout.trim());
-            },
-        );
-    });
-}
-
-function getCustomDomain(hostedZoneId: string) {
+function getCustomDomain() {
     return {
         name: domainName,
-        dns: sst.aws.dns({
-            zone: hostedZoneId,
-        }),
+        dns: sst.cloudflare.dns(),
     };
 }
 
@@ -32,8 +13,7 @@ const isProd = $app.stage === 'prod';
 const subdomain = isProd ? '' : `marketing-${$app.stage}.`;
 const domainName = `${subdomain}${domain}`;
 
-const hostedZoneId = await getHostedZoneId(domain);
-const customDomain = getCustomDomain(hostedZoneId);
+const customDomain = getCustomDomain();
 
 const site = new sst.aws.Astro('MoosicBoxMarketing', {
     buildCommand: 'pnpm build --config astro.config.sst.mjs',
