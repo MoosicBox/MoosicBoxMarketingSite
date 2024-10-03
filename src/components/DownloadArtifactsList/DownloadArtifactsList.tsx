@@ -12,12 +12,28 @@ export default function modalFunc() {
     const [releases, setReleases] = createSignal<OsRelease[]>([]);
 
     onMount(async () => {
-        const githubReleases = await getGitHubReleases({
-            org: 'MoosicBox',
-            repo: 'MoosicBoxApp',
-        });
-
-        setReleases(githubReleases.map(createOsRelease));
+        await Promise.all([
+            (async () => {
+                const newReleases = await getGitHubReleases({
+                    org: 'MoosicBox',
+                    repo: 'MoosicBox',
+                });
+                setReleases([
+                    ...newReleases.map(createOsRelease),
+                    ...(releases() ?? []),
+                ]);
+            })(),
+            (async () => {
+                const archivedReleases = await getGitHubReleases({
+                    org: 'MoosicBox',
+                    repo: 'MoosicBoxApp',
+                });
+                setReleases([
+                    ...(releases() ?? []),
+                    ...archivedReleases.map(createOsRelease),
+                ]);
+            })(),
+        ]);
     });
 
     return (
